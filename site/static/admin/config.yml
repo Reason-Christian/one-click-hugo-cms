@@ -3,11 +3,11 @@ backend:
 
 logo_url: https://your-site.com/images/logo.svg
 
-
+publish_mode: editorial_workflow
 media_folder: assets/uploads
 
 collections: # A list of collections the CMS should be able to edit
-  - name: 'moneybenefits' # Used in routes, ie.: /admin/collections/:slug/edit
+  - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Money and Benefits' # Used in the UI
     label_singular: 'Money and Benefits' # Used in the UI, ie: "New Post"
     description: >
