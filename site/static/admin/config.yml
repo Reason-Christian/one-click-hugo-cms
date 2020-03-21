@@ -8,11 +8,46 @@ media_folder: assets/uploads
 
 collections: # A list of collections the CMS should be able to edit
   - name: 'posts' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Posts' # Used in the UI
+    label_singular: 'Post' # Used in the UI, ie: "New Post"
+    description: >
+      It can be hard to cope with the financial aftermath of the condition. This is not only true for condition survivors but also their families and carers. But support is available for you if you can't work for a while or have a disability, as well as for carers.
+    folder: '_posts'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: 'Assigned to: {{title}} -- {{title}} -- {{year}}/{{month}}/{{day}}'
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+    
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime", dateFormat: 'YYYY-MM-DD', timeFormat: 'HH:mm', format: 'YYYY-MM-DD HH:mm',}
+      - {label: "Intro Blurb", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Boolean', name: 'boolean', widget: 'boolean', default: true }
+      - { label: 'Map', name: 'map', widget: 'map' }
+      - { label: 'Text', name: 'text', widget: 'text', hint: 'Plain text, not markdown' }
+      - { label: 'Number', name: 'number', widget: 'number', hint: 'To infinity and beyond!' }
+      - { label: 'Markdown', name: 'markdown', widget: 'markdown' }
+      - { label: 'Datetime', name: 'datetime', widget: 'datetime' }
+      - { label: 'Date', name: 'date', widget: 'date' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'File', name: 'file', widget: 'file' }
+      - { label: 'Select', name: 'select', widget: 'select', options: ['a', 'b', 'c'] }
+      - {
+          label: 'Select multiple',
+          name: 'select_multiple',
+          widget: 'select',
+          options: ['a', 'b', 'c'],
+          multiple: true,
+        }
+
+  - name: 'moneybenefits' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Money and Benefits' # Used in the UI
     label_singular: 'Money and Benefits' # Used in the UI, ie: "New Post"
     description: >
       It can be hard to cope with the financial aftermath of the condition. This is not only true for condition survivors but also their families and carers. But support is available for you if you can't work for a while or have a disability, as well as for carers.
-    folder: '_posts'
+    folder: '_moneybenefits'
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     summary: 'Assigned to: {{title}} -- {{title}} -- {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
